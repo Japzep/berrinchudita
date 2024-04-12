@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Berrinchudita</title>
+    <style type="text/css">
+        /* Estilos CSS existentes */
+        body {
+            text-align: center; /* Alinea el contenido al centro */
+            font-size: 25px;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            background-color: #FFFFFF;
+        }
+
+        /* Estilos para el contenedor del botón */
+        #button {
+            margin-top: 50px; /* Espacio superior */
+            width: 650px;
+            height: 200px;
+            display: table;
+            margin-left: auto; /* Centra horizontalmente */
+            margin-right: auto; /* Centra horizontalmente */
+        }
+
+        /* Estilos para el contenedor del botón */
+        #buttonholder {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        /* Estilos para la imagen del botón */
+        #thebutton {
+            cursor: pointer;
+            display: block; /* Asegura que la imagen se muestre como un bloque */
+            margin: 0 auto; /* Centra horizontalmente */
+        }
+    </style>
+    <script type="text/javascript">
+        // Tu JavaScript existente aquí
+        
+        // Función para redireccionar
+        function redirectToPage() {
+            // Cambia la URL a la que deseas redireccionar
+            window.location.href = "https://wa.me/525544685599"; // Reemplaza "https://wa.me/525544685599" con la URL deseada
+        }
+    </script>
+</head>
+<body onload="disableSelection(self);" style="">
+    <div id="button" class="centered">
+        <div id="buttonholder">
+            <!-- Otros elementos en tu HTML -->
+            <!-- Agrega el evento onclick a la imagen "button.png" -->
+            <img src="buttons/button.png" alt="Error: Image failed to load" title="THE BIG RED BUTTON" height="120" width="120" onclick="redirectToPage();" id="thebutton" onmousedown="this.src = 'buttons/pressed.png';" onmouseup="this.src = 'buttons/button.png';" onmouseout="this.src = 'buttons/button.png';">
+            <!-- Otros elementos en tu HTML -->
+        </div>
+    </div>
+    <div id="talk" class="centered">
+        Fuera de servicio
+    </div>
+</body>
+</html>
