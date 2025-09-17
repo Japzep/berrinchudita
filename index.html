@@ -1,0 +1,443 @@
+<html>
+    <head>
+        <title>Mi niña hermosa</title>
+        <style type="text/css">
+            body{
+                text-align:center;
+                font-size: 25px;
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                -ms-user-select:none;
+                background-color:#FFFFFF;
+            }
+            .centered{
+                margin-left:auto;
+                margin-right:auto;
+            }
+            #button{
+                padding-top:50px;
+                width:650px;
+                height:200px;
+                display:table;
+            }
+            #buttonholder{
+                display:table-cell;
+                vertical-align:middle;
+            }
+            #thebutton:hover{
+                cursor:pointer;
+            }
+            .buttons:hover{
+                cursor:pointer;
+            }
+            #talk{
+                padding-top:25px;
+                font-weight:bold;
+                font-size:33px;
+            }
+
+            #funky{
+                position:absolute;
+            }
+
+            #funky img{
+                position:absolute;
+            }
+
+            #funky1{ left:-234px; top: -96px; height: 50px; width: 50px; }
+            #funky2{ left:-188px; top: -69px; height:100px; width:100px; }
+            #funky3{ left: -80px; top:  15px; height: 60px; width: 60px; }
+            #funky4{ left: 315px; top:  31px; height: 60px; width: 60px; }
+            #funky5{ left:-201px; top:  66px; height: 75px; width: 75px; }
+            #funky6{ left: -33px; top: -92px; height: 75px; width: 75px; }
+            #funky7{ left:  50px; top: -50px; height: 40px; width: 40px; }
+            #funky8{ left:  85px; top: -97px; height: 50px; width: 50px; }
+            #funky9{ left: 119px; top: -35px; height: 80px; width: 80px; }
+            #funky10{left: 185px; top: -83px; height: 50px; width: 50px; }
+            #funky11{left: 257px; top: -82px; height:110px; width:110px; }
+            #funky12{left: 220px; top:  10px; height: 50px; width: 50px; }
+            #funky13{left: 168px; top:  64px; height: 65px; width: 65px; }
+            #funky14{left: 258px; top:  71px; height: 50px; width: 50px; }
+            #funky15{z-index:1; }
+        </style>
+        <script type="text/javascript">
+            var move = 5;
+            var pos = 0;
+            var interval = null;
+            function animate(){
+                var thebutton = document.getElementById("thebutton");
+                if(pos==225)
+                    move = -5;
+                if(pos==-225)
+                    move = 5;
+                pos +=move;
+                thebutton.style.left =  pos;
+            }
+
+            function speek(num){
+                var say;
+                switch(num){
+                    case 0: say = "Mi niña, no presiones el corazón"; break;
+                    case 1: say = "¡Danielita! jaja<br>\n Con que necia"; break;
+                    case 2: say = "... ¿otra vez?.<br>\nOkay 😒, sigue."; break;
+                    case 3: say = "Exactamente así.<br>\nTu sigue 😩."; break;
+                    case 4: say = "Te gusta ¿no?🙄."; break;
+                    case 5: say = "Hazlo."; break;
+                    case 6: say = "¿Contenta?.<br>\nEspero que sí."; break;
+                    case 7: say = "Es de lo que hablaba,<br>\nno me haces caso 😔."; break;
+                    case 8: say = "Ah con que esas traemos....<br>\nYa verás🤨!"; break;
+                    case 9: say = "Si lo presionas otra vez<br>\nno me quieres🥺."; break;
+                    case 10: say = "JAJAJA te pasas😒.<br>\nPues hazlo jaja."; break;
+                    case 11: say = "JAJAJA! No te la pondré sencilla😎"; changeButton("small"); break; //CHANGE BUTTON (small)
+                    case 12: say = "... No me estoy riendo😤."; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 13: say = "¿Serías capaz de aplastarla?<br>\nEs Nala🥺. Ahora dime<br>\n¿Qué harás?🥱"; changeButton("penguin"); break; //CHANGE BUTTON (penguin)
+                    case 14: say = "...JAJAJA no tienes limites😆."; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 15: say = "Seguro estás pensando \"Que mala soy<br>\jaja\" espera un poco😜."; break;
+                    case 16: say = "¡¿Segura que quieres seguir?!"; break;
+                    case 17: say = "¿Cuál es el correcto?<br>\nYa no es tan facil ¿verdad señorita?😂"; changeButton("three"); break; //CHANGE BUTTON (three)
+                    case 18: say = "¿Por qué eres así? jaja🥴."; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 19: say = "¿No que muy facil?."; changeButton("thirtytwo"); break; //CHANGE BUTTON (thirtytwo)
+                    case 20: say = "JAJAJA yo soy el malo!😈"; changeButton("onetwentyeight"); break; //CHANGE BUTTON (onetwentyeight)
+                    case 21: say = "... Quedé🤡"; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 22: say = "¿Sabes? Puedes presionarlo.<br>\nYa no me interesa.🙃"; break;
+                    case 23: say = "En verdad, No me interesa más😉."; break;
+                    case 24: say = "Sabía que no ibas a parar."; break;
+                    case 25: say = "En serio."; break;
+                    case 26: say = "Te gustan las caricaturas ¿no?"; break;
+                    case 27: say = "...¿Mucho?"; break;
+                    case 28: say = "Sobre todo de Stitch ¿No?"; break;
+                    case 29: say = "En ese caso."; break;
+                    case 30: say = "Elige uno."; break;
+                    case 31: say = "Stitch es buena opción."; break;
+                    case 32: say = "Presiona a Stitch."; changeButton("colors_red"); break; //CHANGE BUTTON (colors_red)
+                    case 33: say = "Presiona a Kuromi"; changeButton("colors_green"); break; //CHANGE BUTTON (colors_green)
+                    case 34: say = "Presiona a Kitty "; break;
+                    case 35: say = "JAJA ¿ahora quién es el malo?🤣.<br>\nTú ya no😝"; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 36: say = "Pero me alegra pasar<br>\néste tiempo contigo.😳"; break;
+                    case 37: say = "¿Quisieras dejar de apretar<br>\nlos corazones?"; break;
+                    case 38: say = "No, de verdad."; break;
+                    case 39: say = "¿Lo has pensado?."; break;
+                    case 40: say = "¿Qué pasaría?."; break;
+                    case 41: say = "Si solo dejaras de presionar!🤔"; break;
+                    case 42: say = "¿Qué pasaría si la proxima vez<br>\nque presiones el botón, la banda dejara<br>\nde existir?"; break;
+                    case 43: say = "¿Ahora lo puedes ver?<br>\nSe concedió tu deseo."; break;
+                    case 44: say = "Ya no hay más banda.😱😱😱"; break;
+                    case 45: say = "¿Sabes? en algún momento<br>\nimpediré que te salgas con la tuya."; break;
+                    case 46: say = "La banda dejó de existir<br>\ny tú solo quieres presionar los corazones"; break;
+                    case 47: say = "Ni eso te detiene☹️<br>\n⚠Si lo haces otra vez tu celular muere.⚠"; break;
+                    case 48: say = "¡PUM!<br>\nYa no sirve😰"; break;
+                    case 49: say = "Eso pudo acabar mal🧐"; break;
+                    case 50: say = "El mundo sin banda y tú sin celular."; break;
+                    case 51: say = "A mi no me preocupa, ni me gusta la banda JAJA."; break;
+                    case 52: say = "Pero a ti sí."; break;
+                    case 53: say = "Y casi te quedas sin celular otra vez 🥴"; break;
+                    case 54: say = "Detente ya.😩"; break;
+                    case 55: say = "¿Alguna vez te he dicho cuan necia eres?"; break;
+                    case 56: say = "Mucho."; break;
+                    case 57: say = "Comenzaré a escribir al revés<br>\nsi vuelves a presionar el corazón."; break;
+                    case 58: say = "ɐɾ̣ɐɾ̣ ǝɯɹǝǝן sǝpǝnd ou ɐɹoɥⱯ"; break; //CHANGE TEXT (upsidedown)
+                    case 59: say = "ɐɾ̣ɐɾ̣ ɹɐןnןǝɔ ןǝ ɹɐǝʇןoʌ ǝnb ǝʇɹɐzɹoɟsǝ sǝɹǝı̣ɟǝɹԀ"; break;
+                    case 60: say = "¡ɐpnɹɐʇsǝʇ sǝɹǝ ǝnb ı̣S"; break;
+                    case 61: say = ""; break; //CHANGE TEXT (default)
+                    case 62: say = ""; changeButton("w"); break;
+                    case 63: say = "Me extrañaste jaja."; changeButton(""); break;
+                    case 64: say = "Deja de presionar. Por favor."; break;
+                    case 65: say = "Solo tienes que dejar de presionar<br>no es tan difícil."; break;
+                    case 66: say = "POR FAVOR!!!!"; break;
+                    case 67: say = "Te daré lo que quieras"; break;
+                    case 68: say = "¿Un peluche?"; break;
+                    case 69: say = "¿Una copa de vino?"; break;
+                    case 70: say = "¡Ay, vamos! Solo para"; break;
+                    case 71: say = "Está bien te lo buscaste<br>\nno me dejas de otra"; break;
+                    case 72: say = "¡Ya veremos!<br>\nJAJAJA"; changeButton("animated"); break; //CHANGE BUTTON (animated)
+                    case 73: say = "Vamos!"; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 74: say = "¿Muy listilla no?!🙊"; changeButton("funky"); break; //CHANGE BUTTON (funky)
+                    case 75: say = "No puedes parar<br>\nporque todo ésto<br>\nte divierte JAJA"; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 76: say = "¿Ya cuánto tiempo llevas<br>\npresionando un corazón?🙄."; break;
+                    case 77: say = "¿Cómo te sientes al respecto?🤔"; break;
+                    case 78: say = "Hay una ventaja en todo esto."; break;
+                    case 79: say = "Pero es un secreto.<br>\nAsí que no puedo decirte."; break;
+                    case 80: say = "Apuesto a que quieres saber, pero no te diré"; break;
+                    case 81: say = "Bueno, ya que insistes no te lo diré jaja"; break;
+                    case 82: say = "Pero en serio, hay un secreto.. <br>\nNo sabes pero todo éste tiempo fuiste parte de un plan."; break;
+                    case 83: say = "Cada vez que das un tap en un corazón..."; break;
+                    case 84: say = "...recibo un Te quiero <br>\ny has estado ahí presionando sin control"; break;
+                    case 85: say = "JAJAJA y en diferentes idiomas!"; break;
+                    case 86: say = "Je t'aime!"; break;
+                    case 87: say = "Ti voglio bene!"; break;
+                    case 88: say = "Ich liebe dich!"; break;
+                    case 89: say = "T'estimo!"; break;
+                    case 90: say = "我爱你"; break;
+                    case 91: say = "Ahí dice Te quiero"; break;
+                    case 92: say = "JAJA no es como que hable taka-taka..."; break;
+                    case 93: say = "Pero ahí dice jaja"; break;
+                    case 94: say = "Espero que no diga otra cosa..."; break;
+                    case 95: say = "Detestaría que dijera cacheteame,<br>\n escupeme en la cara o algo así 🥴"; break;
+                    case 96: say = "O sea, sí quisiera 😳 JAJA<br>\npero no es el punto"; break;
+                    case 97: say = "... ¿Pero sí lo harás? 🙈"; break;
+                    case 98: say = "En serio..."; break;
+                    case 99: say = "Pagué mucho por la traducción."; break;
+                    case 100: say = "Tendría que cortar<br>\nuna que otra cabeza."; break;
+                    case 101: say = "Ya sabes, metaforicamente..."; break;
+                    case 102: say = "Igual no es como que al mundo<br>\nle preocupe unos cuantos chinos menos!"; break;
+                    case 103: say = "JAJAJA ya me pasé."; break;
+                    case 104: say = "Entonces..."; break;
+                    case 105: say = "No deberías<br>\nseguir presionando."; break;
+                    case 106: say = "Diré algunas cosas que no te gustarán.<br>\nDebes estar segura."; break;
+                    case 107: say = "Te lo advertí... despues nada<br>\nde arrepentimientos."; break;
+                    case 108: say = "~"; break;
+                    case 109: say = "Me encanta tu carita y cuando comes..."; break;
+                    case 110: say = "Ya sabes, carita de princesa<br>\nhambre de camionera"; break;
+                    case 111: say = "~"; break;
+                    case 112: say = "Y cuando te enojas... ufff sí me pones"; break;
+                    case 113: say = "JAJAJAJAJAJA"; break;
+                    case 114: say = "Bueno, bueno"; break;
+                    case 115: say = "¿Ya dejarás de presionar el corazón?"; break;
+                    case 116: say = "¡A ver si así ya!"; changeButton("small2"); break; //CHANGE BUTTON (small2)
+                    case 117: say = "Has llegado muy lejos"; changeButton(""); break; //CHANGE BUTTON (default)
+                    case 118: say = "Eres perseverante, queda claro."; break;
+                    case 119: say = "Cada vez que presionas, me excito.😏"; break;
+                    case 120: say = "Ufff me gusta mucho...🔥🔥🔥"; break;
+                    case 121: say = "Ay! Que ricooo.🤤"; break;
+                    case 122: say = "Sigue así mi vida😈😈😈"; break;
+                    case 123: say = "No pares🔥🤤"; break;
+                    case 124: say = "Ay ay ay, no puedo más🤤🤤🤤"; break;
+                    case 125: say = "Aaaay pero que delicioso🔥🔥🤤"; break;
+                    case 126: say = "...JAJAJAJA detente que😏..."; break;
+                    case 127: say = "Mmmmmm jaja ME ENACANTA😈😈."; break;
+                    case 128: say = "¡¡DANIELITA!! Te encanta toquetearme he😏."; break;
+                    case 129: say = "Ya lo sabía, pero no por medio de una pantalla🤔"; break;
+                    case 130: say = "¡ERES UNA GOLOSA!🤣."; break;
+                    case 131: say = "Bueno pero estuvo muy rico y todo.😳"; break;
+                    case 132: say = "Espero lo hayas disfrutado,<br>\nporque yo sí JAJA."; break;
+                    case 133: say = "Se siente bien..."; break;
+                    case 134: say = "Mejor de lo que esperaba.😳"; break;
+                    case 135: say = "Pero sigues sin detenerte😔.<br>\n¿Sabes que eres muy mala?😒"; break;
+                    case 136: say = "¿Qué pasaría si te digo que cada vez<br>\nque das tap alguien muere?<br>\n(Llevas uno 😱)"; break;
+                    case 137: say = "Felicidades mataste a otro en Francia"; break;
+                    case 138: say = "3<br>\n(Brasil)"; break;
+                    case 139: say = "4<br>\n(Egipto)"; break;
+                    case 140: say = "5<br>\n(Ucrania)"; break;
+                    case 141: say = "6<br>\n(China)"; break;
+                    case 142: say = "7<br>\n(Argentina)"; break;
+                    case 143: say = "8<br>\n(Suecia)"; break;
+                    case 144: say = "9<br>\n(Mataste a ALFREDITO Olivas)"; break;
+                    case 145: say = "JAJAJAJA!<br>\nEso sí dolió ¿verdad?."; break;
+                    case 146: say = "En realidad ese fue de Argentina.🤣"; break;
+                    case 147: say = "Mataste 8 personas en menos de un minuto.<br>\nLo tuyo son los corridos no banda."; break;
+                    case 148: say = "¿Que fueron 9?<br>\n¿Los contaste?🤔."; break;
+                    case 149: say = "Ah sí JAJA<br>\nNo conté al chino ¿Quién lo haría? JAJAJAJA."; break;
+                    case 150: say = "Ya en serio."; break;
+                    case 151: say = "Hay algo que tengo que decirte"; break;
+                    case 152: say = "Me gustaría estuvieras a mi lado para decirtelo"; break;
+                    case 153: say = "O mejor arriba JAJA"; break;
+                    case 154: say = "Abajo no estaría mal 😏"; break;
+                    case 155: say = "JAJAJAJAJAJA.<br>\nPero sí hay algo que decirte..."; break;
+                    case 156: say = "Te quiero"; break;
+                    case 157: say = "Aunque a veces me cueste"; break;
+                    case 158: say = "Pero es verdad"; break;
+                    case 159: say = "Bueno, me programaron para decirte ésto<br>\nNo es como que un un aparato electrónico sienta.🤖"; break;
+                    case 160: say = "...Yo solo paso el recado."; break;
+                    case 161: say = "Igual no me pagan💔"; break;
+                    case 162: say = "Trabajo todo el día para decirte ésto..."; break;
+                    case 163: say = "Y ni seguro tengo<br>\n¡Ay perdón!"; break;
+                    case 164: say = "Nosotros también lloramos.😭"; break;
+                    case 165: say = "No literal<br>\nNos oxidaríamos.😝"; break;
+                    case 166: say = "Perdón..."; break;
+                    case 167: say = "JAJAJA a lo mío..."; break;
+                    case 168: say = "Ahora sí en serio, en serio."; break;
+                    case 169: say = "Nosotros bien rudos<br>\nY ahora hasta somos cursis.😝"; break;
+                    case 170: say = "JAJAJA en serio<br>\n¿Quién nos viera?."; break;
+                    case 171: say = "No se lo digas a nadie.😒<br>\n¿Qué dirían?."; break;
+                    case 172: say = "'Ay sí ay sí, agarrados de la mano'👫"; break;
+                    case 173: say = "Nosotros bien ridículos 🙄 JAJAJA"; break;
+                    case 174: say = "Pero así andamos 😍🥰🤤"; break;
+                    case 175: say = "Nadie creería que te la pasas<br>\ndandome besitos y chiqueandote 😅🤣 JAJA"; break;
+                    case 176: say = "¿Sabes una cosa?"; break;
+                    case 177: say = "Me encantas 😍❤️."; break;
+                    case 178: say = "Porque podemos ser nosotros sin fingir nada.❤️"; break;
+                    case 179: say = "Porque nos reímos todo el tiempo lit, lit.😝"; break;
+                    case 180: say = "Amor me gustan tus cachetitos, tus ojos, tus besos, todo 😍❤️..."; break;
+                    case 181: say = "❤️...Me gusta tomarte de la mano, abrazarte y besarte...❤️"; break;
+                    case 182: say = "Es algo que me encanta,<br>\nme la podría pasar todo el tiempo así.😍😍😍❤️"; break;
+                    case 183: say = "Y nalguearte me gusta mucho,<br>\nme quedo así 😍"; break;
+                    case 184: say = "Pero si lo cuentas nadie te creería JAJA..."; break;
+                    case 185: say = "No lo hagas 😒"; break;
+                    case 186: say = "..."; break;
+                    case 187: say = "En serio jaja"; break;
+                    case 188: say = "Nadie te creería, ni a mi..."; break;
+                    case 189: say = "¿Quién me creería  si yo dijera que tú?..."; break;
+                    case 190: say = "Eres linda, cursi, atenta, cariñosa y que te super chiqueas conmigo 😳"; break;
+                    case 191: say = "Aceptémoslo es algo que solo nosotros sabemos JAJA"; break;
+                    case 192: say = "Ni porque alguien más lea ésto..."; break;
+                    case 193: say = "Es difícil imaginarlo JAJAJA..."; break;
+                    case 194: say = "Mi niña, en verdad..."; break;
+                    case 195: say = "Te"; break;
+                    case 196: say = "Te quiero...😳"; break;
+
+                    default: say ="Mi niña, no presiones el corazón"; num = 0;
+                }
+                document.getElementById("thebutton").onclick = function() {speek(num+1);};
+                document.getElementById("talk").innerHTML = say;
+            }
+
+            function changeButton(to){
+                var button = document.getElementById("button");
+                var thebutton = document.getElementById("thebutton");
+                var buttonholder = document.getElementById("buttonholder");
+                if(to == "small"){
+                    thebutton.style.width = "10px";
+                    thebutton.style.height = "10px";
+                    thebutton.onmousedown="";
+                    thebutton.onmouseup="";
+                    thebutton.onmouseout="";
+                }else if(to == "penguin"){
+                    thebutton.src = "buttons/penguin.png";
+                    thebutton.style.height = "138px";
+                    thebutton.style.width = "149px";
+                    thebutton.onmousedown="";
+                    thebutton.onmouseup="";
+                    thebutton.onmouseout="";
+                    //alert("NYI: penguin");
+                }else if(to == "three"){
+                    document.getElementById("three").style.display = "inline";
+                    //alert("NYI: three");
+                }else if(to == "thirtytwo"){
+                    thebutton.src = "buttons/medium.png";
+                    thebutton.style.height = "60px";
+                    thebutton.style.width = "61px";
+                    document.getElementById("thirtytwo_1").style.display = "inline";
+                    document.getElementById("thirtytwo_2").style.display = "inline";
+                    thebutton.onmousedown="";
+                    thebutton.onmouseup="";
+                    thebutton.onmouseout="";
+                    //alert("NYI: thirtytwo");
+                }else if(to == "onetwentyeight"){
+                    thebutton.src = "buttons/small.png";
+                    thebutton.style.height = "30px";
+                    thebutton.style.width = "31px";
+                    document.getElementById("thirtytwo_1").style.display = "none";
+                    document.getElementById("thirtytwo_2").style.display = "none";
+                    document.getElementById("onetwentyeight_1").style.display = "inline";
+                    document.getElementById("onetwentyeight_2").style.display = "inline";
+                    thebutton.onmousedown="";
+                    thebutton.onmouseup="";
+                    thebutton.onmouseout="";
+                    //alert("NYI: onetwentyeight");
+                }else if(to == "colors_red"){
+                    //thebutton.src = "buttons/button.png";
+                    //thebutton.style.height = "120px";
+                    //thebutton.style.width = "120px";
+                    document.getElementById("colors_red_1").style.display = "inline";
+                    document.getElementById("colors_red_2").style.display = "inline";
+                    //alert("NYI: colors_red");
+                }else if(to == "colors_green"){
+                    thebutton.src = "buttons/green.png";
+                    //thebutton.style.height = "120px";
+                    //thebutton.style.width = "120px";
+                    //document.getElementById("colors_red_1").style.display = "inline";
+                    document.getElementById("colors_red_2").style.display = "none";
+                    document.getElementById("colors_green").style.display = "inline";
+                    thebutton.onmousedown="";
+                    thebutton.onmouseup="";
+                    thebutton.onmouseout="";
+                    //alert("NYI: colors_green");
+                }else if(to == "animated"){
+                    //alert("NYI: animated");
+                    move = 5;
+                    pos = 0;
+                    thebutton.style.position = "relative";
+                    interval = setInterval(animate,20);
+                }else if(to == "funky"){
+                    //alert("NYI: funky");
+                    document.getElementById("funky10").onclick = function() { speek(75);}; // BAD HARD-CODING NUMBER
+                    document.getElementById("funky").style.display = "inline";
+                }else if(to == "small2"){
+                    thebutton.style.height = "13px";
+                    thebutton.style.width = "7px";
+                    thebutton.style.position = "relative";
+                    thebutton.style.left = "69px";
+                    thebutton.style.top = "142px";
+                }else if(to == "w"){
+                    document.getElementById("w").style.display= "inline";
+                }else{ //default
+                    if(interval != null)
+                        clearInterval(interval);
+                    thebutton.style.left = 0;
+                    thebutton.style.top = 0;
+                    if(thebutton.src != "buttons/button.png")
+                        thebutton.src = "buttons/button.png";
+                    thebutton.style.height = "120px";
+                    thebutton.style.width = "120px";
+                    thebutton.onmousedown=function (){this.src = "buttons/pressed.png";};
+                    thebutton.onmouseup=function (){this.src = "buttons/button.png";};
+                    thebutton.onmouseout=function (){this.src = "buttons/button.png";};
+                    button.style.height = "200px";
+                    button.style.width = "650px";
+                    document.getElementById("three").style.display = "none";
+                    document.getElementById("thirtytwo_1").style.display = "none";
+                    document.getElementById("thirtytwo_2").style.display = "none";
+                    document.getElementById("onetwentyeight_1").style.display = "none";
+                    document.getElementById("onetwentyeight_2").style.display = "none";
+                    document.getElementById("colors_red_1").style.display = "none";
+                    document.getElementById("colors_red_2").style.display = "none";
+                    document.getElementById("colors_green").style.display = "none";
+                    document.getElementById("w").style.display= "none";
+                    document.getElementById("funky").style.display = "none";
+
+                }
+            }
+
+            window.ondragstart = function() { return false; };
+        </script>
+    </head>
+    <body onload="disableSelection(self);" style="">
+    <div id="button" class="centered">
+        <div id="buttonholder">
+            <div style="color:#FFFFFF;margin-top:-50px;">Well aren't you a little cheater,
+                <br/>changing the background color like that.</div>
+            <div id="colors_red_1" style="display:none;">
+                <img src="buttons/blue.png" alt="" class="buttons">
+            </div>
+            <div id="colors_green" style="display:none;">
+                <img src="buttons/button.png" alt="" class="buttons">
+            </div>
+            <div id="onetwentyeight_1" style="display:none;">
+                <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+            </div>
+            <div id="funky" style="display:none;">
+                <img src="buttons/medium.png" alt="" class="buttons" id="funky1"> <img src="buttons/button.png" alt="" class="buttons" id="funky2"> <img src="buttons/button.png" alt="" class="buttons" id="funky3"> <img src="buttons/button.png" alt="" class="buttons" id="funky4"> <img src="buttons/button.png" alt="" class="buttons" id="funky5"> <img src="buttons/button.png" alt="" class="buttons" id="funky6"> <img src="buttons/button.png" alt="" class="buttons" id="funky7"> <img src="buttons/button.png" alt="" class="buttons" id="funky8"> <img src="buttons/button.png" alt="" class="buttons" id="funky9"> <img src="buttons/button.png" alt="" class="buttons" id="funky10"> <img src="buttons/button.png" alt="" class="buttons" id="funky11"> <img src="buttons/button.png" alt="" class="buttons" id="funky12"> <img src="buttons/button.png" alt="" class="buttons" id="funky13"> <img src="buttons/button.png" alt="" class="buttons" id="funky14"> <img src="buttons/button.png" alt="" class="buttons" id="funky15"></div>
+            <div id="w" style="display:none;"><img src="buttons/w.png" alt="" class="buttons" onclick="alert('eek! You found me!');changeButton('');" style="position:absolute;top:40px;" /></div>
+            <div id="thirtytwo_1" style="display:none;"><img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons">
+                <br/><img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons">
+                <br/><img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons">
+            </div>
+            <div id="three" style="display:none;">
+                <img src="buttons/button.png" alt="" class="buttons">
+                <img src="buttons/button.png" alt="" class="buttons">
+            </div>
+            <img src="buttons/button.png" alt="Error: Image failed to load" title="THE BIG RED BUTTON" height="120" width="120" onclick="speek(1);" id="thebutton" onmousedown="this.src = 'buttons/pressed.png';" onmouseup="this.src = 'buttons/button.png';" onmouseout="this.src = 'buttons/button.png';">
+            <div id="thirtytwo_2" style="display:none;">
+                <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons">
+                <br/><img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons"> <img src="buttons/medium.png" alt="" class="buttons">
+            </div>
+            <div id="onetwentyeight_2" style="display:none;">
+                <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+                <br/><img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons"> <img src="buttons/small.png" alt="" class="buttons">
+            </div>
+            <div id="colors_red_2" style="display:none;">
+                <img src="buttons/green.png" alt="" class="buttons">
+            </div>
+        </div>
+    </div>
+    <div id="talk" class="centered">
+        Mi niña, no presiones el corazón
+    </div>
+</body>
+</html>
